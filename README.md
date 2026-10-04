@@ -6,10 +6,10 @@ A simple, fast, and premium personal portfolio website for **Jasmin F.**, built 
 
 ## 🎨 Design Philosophy
 
-- **Palette**: Warm cream / off-white background (`#FAF8F5`), crisp dark typography (`#1A1815`), and terracotta accents (`#D95D39`).
+- **Palette**: Deep rich black background (`#0A0A0A`), crisp white typography (`#FFFFFF` / `#F5F5F5`), and warm golden accents (`#D4AF37` / `#E6C265`).
 - **Typography**: Clean, elegant, and youthful with *Plus Jakarta Sans*.
 - **Imagery**: Single photo design (`public/images/profile.jpg`). No project image dependencies or heavy 3D assets.
-- **Tone**: Clean, professional, personal, and focused on learning by building.
+- **Tone**: Modern, luxurious, professional, and focused on learning by building.
 
 ---
 

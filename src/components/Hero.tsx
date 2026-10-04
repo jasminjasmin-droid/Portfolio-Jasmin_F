@@ -10,15 +10,15 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden"
+      className="relative min-h-[90vh] flex items-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-[#0A0A0A]"
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Typography & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             {/* Status Tag / Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF0EC] border border-[#F2D7CD] text-[#C54E2C] text-xs font-semibold tracking-wide mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#D95D39] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold tracking-wide mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shadow-[0_0_6px_#D4AF37]" />
               <span>{personal.statusBadge}</span>
             </div>
 
@@ -28,17 +28,17 @@ export const Hero: React.FC = () => {
             </p>
 
             {/* Large Name */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1A1815] tracking-tight leading-[1.05] mb-5">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-5">
               {personal.name}
             </h1>
 
             {/* Subtitle */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#D95D39] tracking-tight mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#D4AF37] tracking-tight mb-6">
               {personal.heroSubtitle}
             </h2>
 
             {/* Short description */}
-            <p className="text-base sm:text-lg text-[#5F5A53] leading-relaxed max-w-xl mb-9">
+            <p className="text-base sm:text-lg text-[#A3A3A3] leading-relaxed max-w-xl mb-9">
               {personal.heroSummary}
             </p>
 
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3.5 mb-10 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#1A1815] hover:bg-[#D95D39] rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-[#0A0A0A] bg-[#D4AF37] hover:bg-[#E6C265] rounded-full transition-all duration-200 shadow-sm hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:-translate-y-0.5"
               >
                 <span>Explore My Work</span>
                 <ArrowDown className="w-4 h-4" />
@@ -56,25 +56,25 @@ export const Hero: React.FC = () => {
                 href={personal.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#D95D39] bg-[#FAF0EC] hover:bg-[#D95D39] hover:text-white border border-[#F2D7CD] rounded-full transition-all duration-200 shadow-2xs hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#D4AF37] bg-[#141414] hover:bg-[#1E1E1E] border border-[#D4AF37]/40 hover:border-[#D4AF37] rounded-full transition-all duration-200 shadow-2xs hover:-translate-y-0.5"
                 title="Open Jasmin's Official Resume"
               >
-                <FileText className="w-4 h-4" />
+                <FileText className="w-4 h-4 text-[#D4AF37]" />
                 <span>View Resume</span>
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#1A1815] bg-[#FFFFFF] hover:bg-[#F3EFE9] border border-[#E8E2D8] rounded-full transition-all duration-200 shadow-2xs hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#141414] hover:bg-[#1E1E1E] border border-[#2E2E2E] hover:border-[#D4AF37]/50 rounded-full transition-all duration-200 shadow-2xs hover:-translate-y-0.5"
               >
                 <span>Let's Connect</span>
-                <ArrowUpRight className="w-4 h-4 text-[#D95D39]" />
+                <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
               </a>
             </div>
 
             {/* Quick Links */}
-            <div className="flex flex-wrap items-center gap-5 pt-4 border-t border-[#E8E2D8] w-full max-w-lg">
-              <span className="text-xs uppercase tracking-wider text-[#8A8378] font-semibold">
+            <div className="flex flex-wrap items-center gap-5 pt-4 border-t border-[#222222] w-full max-w-lg">
+              <span className="text-xs uppercase tracking-wider text-[#737373] font-semibold">
                 Direct Channels:
               </span>
               <div className="flex items-center gap-4">
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#5F5A53] hover:text-[#D95D39] transition-colors p-1"
+                  className="text-[#A3A3A3] hover:text-[#D4AF37] transition-colors p-1"
                   aria-label="GitHub Profile"
                   title="GitHub Profile"
                 >
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#5F5A53] hover:text-[#D95D39] transition-colors p-1"
+                  className="text-[#A3A3A3] hover:text-[#D4AF37] transition-colors p-1"
                   aria-label="LinkedIn Profile"
                   title="LinkedIn Profile"
                 >
@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
                 </a>
                 <a
                   href={`mailto:${personal.email}`}
-                  className="text-[#5F5A53] hover:text-[#D95D39] transition-colors p-1"
+                  className="text-[#A3A3A3] hover:text-[#D4AF37] transition-colors p-1"
                   aria-label="Send Email"
                   title="Email Jasmin"
                 >
@@ -113,26 +113,26 @@ export const Hero: React.FC = () => {
           {/* Right Column: Single Portrait Photo */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm sm:max-w-md">
-              {/* Subtle background decorative accent border */}
-              <div className="absolute -inset-2.5 rounded-3xl bg-[#FAF0EC] -rotate-1 transition-transform hover:rotate-0 duration-300" />
+              {/* Subtle golden background decorative accent border */}
+              <div className="absolute -inset-2.5 rounded-3xl bg-[#D4AF37]/15 -rotate-1 transition-transform hover:rotate-0 duration-300 blur-[1px]" />
 
               {/* Main Photo Card */}
-              <div className="relative rounded-2xl overflow-hidden bg-white border border-[#E8E2D8] shadow-md p-2">
-                <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-[#F4EFEB]">
+              <div className="relative rounded-2xl overflow-hidden bg-[#141414] border border-[#2A2A2A] shadow-2xl p-2">
+                <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-[#1A1A1A]">
                   {!imgError ? (
                     <img
                       src={personal.profileImage}
                       alt="Jasmin F. Portrait"
                       onError={() => setImgError(true)}
-                      className="w-full h-full object-cover object-[center_15%] filter contrast-[1.02] transition-transform duration-500 hover:scale-[1.02]"
+                      className="w-full h-full object-cover object-[center_15%] filter contrast-[1.03] transition-transform duration-500 hover:scale-[1.02]"
                       loading="eager"
                     />
                   ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#F4EFEB]">
-                      <div className="w-20 h-20 rounded-full bg-[#FAF0EC] border border-[#F2D7CD] flex items-center justify-center text-[#D95D39] text-2xl font-bold mb-3">
+                    <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#141414]">
+                      <div className="w-20 h-20 rounded-full bg-[#1F1F1F] border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] text-2xl font-bold mb-3">
                         JF
                       </div>
-                      <p className="font-semibold text-[#1A1815]">Jasmin F.</p>
+                      <p className="font-semibold text-white">Jasmin F.</p>
                       <p className="text-xs text-[#8A8378] mt-1">
                         Place photo at public/images/profile.jpg
                       </p>
@@ -140,14 +140,14 @@ export const Hero: React.FC = () => {
                   )}
 
                   {/* Corner Accent Pill */}
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-xs py-2 px-3.5 rounded-lg border border-[#E8E2D8] flex items-center justify-between shadow-xs">
+                  <div className="absolute bottom-3 left-3 right-3 bg-[#0A0A0A]/95 backdrop-blur-md py-2 px-3.5 rounded-lg border border-[#D4AF37]/35 flex items-center justify-between shadow-xl">
                     <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-[#D95D39]" />
-                      <span className="text-xs font-semibold text-[#1A1815]">
+                      <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                      <span className="text-xs font-semibold text-white">
                         IEEE Chairperson • B.E. CSE
                       </span>
                     </div>
-                    <span className="text-[11px] font-medium text-[#8A8378]">DMI Engg. College</span>
+                    <span className="text-[11px] font-medium text-[#A3A3A3]">DMI Engg. College</span>
                   </div>
                 </div>
               </div>
