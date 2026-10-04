@@ -1,6 +1,7 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { Hammer, BrainCircuit, Users, GraduationCap, Briefcase, ChevronRight } from 'lucide-react';
+import { Card3D } from './Card3D';
 
 export const About: React.FC = () => {
   const { about, education, internships } = PORTFOLIO_DATA;
@@ -25,24 +26,26 @@ export const About: React.FC = () => {
             </h2>
             <div className="w-12 h-1 bg-[#D4AF37] rounded-full mt-4 mb-6 shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
 
-            {/* Quick Education Card */}
-            <div className="bg-[#141414] border border-[#262626] rounded-2xl p-5 shadow-lg space-y-4">
-              <div className="flex items-center gap-2 pb-2 border-b border-[#222222]">
-                <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
-                <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                  Education
-                </h3>
-              </div>
-              {education.map((edu) => (
-                <div key={edu.institution} className="space-y-0.5">
-                  <p className="text-xs font-bold text-white">{edu.institution}</p>
-                  <p className="text-xs text-[#A3A3A3]">{edu.degree}</p>
-                  {edu.details && (
-                    <p className="text-[11px] font-medium text-[#D4AF37]">{edu.details}</p>
-                  )}
+            {/* Quick Education Card with 3D Tilt */}
+            <Card3D maxTilt={5} className="rounded-2xl">
+              <div className="bg-[#141414] border border-[#262626] rounded-2xl p-5 shadow-lg space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#222222]">
+                  <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                    Education
+                  </h3>
                 </div>
-              ))}
-            </div>
+                {education.map((edu) => (
+                  <div key={edu.institution} className="space-y-0.5">
+                    <p className="text-xs font-bold text-white">{edu.institution}</p>
+                    <p className="text-xs text-[#A3A3A3]">{edu.degree}</p>
+                    {edu.details && (
+                      <p className="text-[11px] font-medium text-[#D4AF37]">{edu.details}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </Card3D>
           </div>
 
           {/* Section Narrative & Pillar Cards */}
@@ -53,23 +56,22 @@ export const About: React.FC = () => {
               ))}
             </div>
 
-            {/* Three Personal Pillars */}
+            {/* Three Personal Pillars with 3D Tilt */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
               {about.attributes.map((attr, idx) => (
-                <div
-                  key={attr.title}
-                  className="bg-[#141414] border border-[#262626] rounded-xl p-5 hover:border-[#D4AF37]/50 transition-all duration-200 shadow-md group hover:-translate-y-0.5"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                    {iconMap[idx % iconMap.length]}
+                <Card3D key={attr.title} maxTilt={6} className="rounded-xl">
+                  <div className="h-full bg-[#141414] border border-[#262626] rounded-xl p-5 hover:border-[#D4AF37]/50 transition-colors duration-200 shadow-md group">
+                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                      {iconMap[idx % iconMap.length]}
+                    </div>
+                    <h3 className="text-base font-bold text-white mb-1.5">
+                      {attr.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#A3A3A3] leading-relaxed">
+                      {attr.desc}
+                    </p>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-1.5">
-                    {attr.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#A3A3A3] leading-relaxed">
-                    {attr.desc}
-                  </p>
-                </div>
+                </Card3D>
               ))}
             </div>
 

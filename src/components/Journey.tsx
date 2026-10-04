@@ -1,6 +1,7 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { Calendar, Compass } from 'lucide-react';
+import { Card3D } from './Card3D';
 
 export const Journey: React.FC = () => {
   const { journey } = PORTFOLIO_DATA;
@@ -37,36 +38,38 @@ export const Journey: React.FC = () => {
                 <span>{item.year}</span>
               </div>
 
-              {/* Milestone Card */}
-              <div className="bg-[#141414] border border-[#262626] rounded-2xl p-6 sm:p-7 hover:border-[#D4AF37]/50 transition-all duration-200 shadow-md">
-                <div className="flex items-center gap-2 mb-2">
-                  <Compass className="w-4 h-4 text-[#D4AF37]" />
-                  <h3 className="text-xl font-bold text-white">
-                    {item.title}
-                  </h3>
-                </div>
+              {/* Milestone Card with 3D Tilt */}
+              <Card3D maxTilt={5} className="rounded-2xl">
+                <div className="bg-[#141414] border border-[#262626] rounded-2xl p-6 sm:p-7 hover:border-[#D4AF37]/50 transition-colors duration-200 shadow-md">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Compass className="w-4 h-4 text-[#D4AF37]" />
+                    <h3 className="text-xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                  </div>
 
-                <p className="text-base text-[#D4D4D4] leading-relaxed mb-5">
-                  {item.description}
-                </p>
-
-                {/* Focus areas tags */}
-                <div className="pt-4 border-t border-[#222222]">
-                  <p className="text-xs uppercase font-semibold text-[#8A8378] tracking-wider mb-2.5">
-                    Highlights:
+                  <p className="text-base text-[#D4D4D4] leading-relaxed mb-5">
+                    {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.focusAreas.map((focus) => (
-                      <span
-                        key={focus}
-                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-[#1A1A1A] text-[#E5E5E5] border border-[#2E2E2E]"
-                      >
-                        {focus}
-                      </span>
-                    ))}
+
+                  {/* Focus areas tags */}
+                  <div className="pt-4 border-t border-[#222222]">
+                    <p className="text-xs uppercase font-semibold text-[#8A8378] tracking-wider mb-2.5">
+                      Highlights:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.focusAreas.map((focus) => (
+                        <span
+                          key={focus}
+                          className="text-xs font-medium px-2.5 py-1 rounded-md bg-[#1A1A1A] text-[#E5E5E5] border border-[#2E2E2E]"
+                        >
+                          {focus}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Card3D>
             </div>
           ))}
         </div>

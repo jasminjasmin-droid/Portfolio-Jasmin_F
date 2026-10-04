@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { Trophy, Award, Users, HeartHandshake, ShieldCheck, Mic, FileText, CheckCircle2, Globe, Sparkles } from 'lucide-react';
+import { Card3D } from './Card3D';
 
 export const Achievements: React.FC = () => {
   const { competitionsAndAwards, leadershipExperience } = PORTFOLIO_DATA;
@@ -90,7 +91,7 @@ export const Achievements: React.FC = () => {
           </div>
         </div>
 
-        {/* Part 1: Hackathons & Competition Wins */}
+        {/* Part 1: Hackathons & Competition Wins with 3D Tilt */}
         {(activeFilter === 'all' || activeFilter === 'hackathons') && (
           <div className="mb-12">
             <div className="flex items-center gap-2 mb-6">
@@ -102,45 +103,48 @@ export const Achievements: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {competitionsAndAwards.map((item) => (
-                <div
+                <Card3D
                   key={item.id}
-                  className="bg-[#141414] border border-[#262626] rounded-2xl p-6 hover:border-[#D4AF37]/60 transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,175,55,0.12)]"
+                  maxTilt={5}
+                  className="rounded-2xl"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        {getAwardIcon(item.id)}
+                  <div className="h-full bg-[#141414] border border-[#262626] rounded-2xl p-6 hover:border-[#D4AF37]/60 transition-colors duration-200 shadow-md flex flex-col justify-between group hover:shadow-[0_0_20px_rgba(212,175,55,0.12)]">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          {getAwardIcon(item.id)}
+                        </div>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#F3CA65] bg-[#D4AF37]/15 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/35">
+                          {item.badge}
+                        </span>
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#F3CA65] bg-[#D4AF37]/15 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/35">
-                        {item.badge}
-                      </span>
-                    </div>
 
-                    <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#D4AF37] transition-colors">
-                      {item.title}
-                    </h4>
+                      <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#D4AF37] transition-colors">
+                        {item.title}
+                      </h4>
 
-                    <p className="text-xs font-semibold text-[#D4AF37] mb-1.5">
-                      {item.subtitle}
-                    </p>
-
-                    <p className="text-xs text-[#8A8378] font-medium mb-3">
-                      {item.event}
-                    </p>
-
-                    {item.description && (
-                      <p className="text-sm text-[#D4D4D4] leading-relaxed">
-                        {item.description}
+                      <p className="text-xs font-semibold text-[#D4AF37] mb-1.5">
+                        {item.subtitle}
                       </p>
-                    )}
+
+                      <p className="text-xs text-[#8A8378] font-medium mb-3">
+                        {item.event}
+                      </p>
+
+                      {item.description && (
+                        <p className="text-sm text-[#D4D4D4] leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </Card3D>
               ))}
             </div>
           </div>
         )}
 
-        {/* Part 2: Leadership & Community Initiatives */}
+        {/* Part 2: Leadership & Community Initiatives with 3D Tilt */}
         {(activeFilter === 'all' || activeFilter === 'leadership') && (
           <div>
             <div className="flex items-center gap-2 mb-6 pt-4">
@@ -152,33 +156,36 @@ export const Achievements: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {leadershipExperience.map((item) => (
-                <div
+                <Card3D
                   key={item.id}
-                  className="bg-[#141414] border border-[#262626] rounded-2xl p-6 hover:border-[#D4AF37]/50 transition-all duration-200 shadow-md flex flex-col justify-between group hover:-translate-y-0.5"
+                  maxTilt={5}
+                  className="rounded-2xl"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        {getLeadershipIcon(item.id)}
+                  <div className="h-full bg-[#141414] border border-[#262626] rounded-2xl p-6 hover:border-[#D4AF37]/50 transition-colors duration-200 shadow-md flex flex-col justify-between group">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          {getLeadershipIcon(item.id)}
+                        </div>
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-white bg-[#1A1A1A] px-2.5 py-0.5 rounded-full border border-[#333333]">
+                          {item.tag}
+                        </span>
                       </div>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-white bg-[#1A1A1A] px-2.5 py-0.5 rounded-full border border-[#333333]">
-                        {item.tag}
-                      </span>
+
+                      <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#D4AF37] transition-colors">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-xs font-semibold text-[#8A8378] mb-2.5">
+                        {item.role}
+                      </p>
+
+                      <p className="text-sm text-[#D4D4D4] leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
-
-                    <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#D4AF37] transition-colors">
-                      {item.title}
-                    </h4>
-
-                    <p className="text-xs font-semibold text-[#8A8378] mb-2.5">
-                      {item.role}
-                    </p>
-
-                    <p className="text-sm text-[#D4D4D4] leading-relaxed">
-                      {item.description}
-                    </p>
                   </div>
-                </div>
+                </Card3D>
               ))}
             </div>
           </div>
