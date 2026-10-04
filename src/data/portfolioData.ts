@@ -218,27 +218,39 @@ export const PORTFOLIO_DATA = {
 
   journey: [
     {
-      year: "2025",
-      title: "Foundations, Competitions & Discovery",
+      year: "2024",
+      title: "Engineering Foundations & First Competitive Win",
       description:
-        "Began deep exploration of computer science fundamentals, competitive programming, and first hackathon podiums.",
+        "Began Computer Science engineering journey at DMI Engineering College, building strong fundamentals in C programming, computational logic, and winning 1st Prize in Hack-A-Math 2024.",
       focusAreas: [
-        "Core C & Python Programming",
+        "C Programming & Core Logic",
         "Hack-A-Math 2024 (1st Prize)",
+        "Data Structures Fundamentals",
+        "Campus Technical Participation",
+      ],
+    },
+    {
+      year: "2025",
+      title: "Ideathons, Public Speaking & Community Initiatives",
+      description:
+        "Expanded into software projects, full-stack concepts, and leadership. Secured 2nd Place in Ideathon ’25, won Voice of DMI ’25, and presented technical research papers.",
+      focusAreas: [
         "Ideathon ’25 (2nd Place)",
         "Voice of DMI ’25 (Winner)",
+        "3rd Prize Paper Presentation (Arunachala College)",
+        "NexBuildOn & Early Internships",
       ],
     },
     {
       year: "2026",
-      title: "Leadership, AI/ML & Global Hackathons",
+      title: "IEEE Branch Leadership, Generative AI & Global Hackathons",
       description:
-        "Expanded into AI/ML, local LLMs, full-stack systems, global hackathons, and high-impact student leadership.",
+        "Spearheading IEEE Student Branch (STB1139A) as Chairperson, GFG Campus Mantri, competing globally in DoraHacks (Top 100), and winning 1st Prize at Innovate ’26 24-hour hackathon.",
       focusAreas: [
-        "DoraHacks International (Top 100 Global)",
+        "DoraHacks International (Top 100 Product)",
         "Innovate ’26 24h Hackathon (1st Prize)",
         "Kerala Police Hackathon Hack'P 26 (Selected)",
-        "IEEE Student Branch Chairperson (STB1139A)",
+        "IEEE Student Branch Chairperson & Petition Initiator",
       ],
     },
   ] as JourneyMilestone[],
