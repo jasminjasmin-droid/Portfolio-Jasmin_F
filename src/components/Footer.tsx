@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         {/* Brand & Made with Curiosity phrase */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
           <span className="font-extrabold text-sm tracking-tight text-white">
-            JASMIN F.
+            Jasmin F.
           </span>
           <span className="hidden sm:inline text-[#D4AF37]">•</span>
           <p className="text-xs sm:text-sm text-[#A3A3A3] flex items-center gap-1.5">

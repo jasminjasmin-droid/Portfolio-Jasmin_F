@@ -97,24 +97,16 @@ export const Projects: React.FC = () => {
                       <span>Source Code</span>
                     </a>
 
-                    {project.demoUrl ? (
+                    {project.demoUrl && (
                       <a
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-[#0A0A0A] bg-[#D4AF37] hover:bg-[#E6C265] border border-[#D4AF37] rounded-lg transition-all duration-200 shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-[#0A0A0A] bg-[#D4AF37] hover:bg-[#E6C265] border border-[#D4AF37] rounded-lg transition-all duration-200 shadow-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                         <span>Live Preview</span>
                       </a>
-                    ) : project.status ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold text-[#A3A3A3] bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg">
-                        In Development
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold text-[#A3A3A3] bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg">
-                        Hardware Design
-                      </span>
                     )}
                   </div>
                 </div>

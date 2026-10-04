@@ -131,14 +131,14 @@ export const PORTFOLIO_DATA = {
   projects: [
     {
       id: "skillmesh",
-      title: "SkillMesh",
-      tagline: "Skill Exchange & Collaboration Platform",
+      title: "Skill Mesh",
+      tagline: "Peer-to-Peer Skill Matching & Exchange",
       description:
         "Built a platform connecting users based on skills, interests, and collaboration needs, with features focused on seamless communication and trust.",
       tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Tailwind CSS"],
       githubUrl: "https://github.com/jasminjasmin-droid/skillmesh",
-      demoUrl: "https://skillmesh.demo",
-      highlight: "Collaboration & Trust",
+      demoUrl: "https://skill-mesh.ai.studio/",
+      highlight: "Peer-to-Peer Exchange",
     },
     {
       id: "civicpulse",
@@ -148,7 +148,6 @@ export const PORTFOLIO_DATA = {
         "Developed a platform connecting citizens and authorities through structured digital workflows and role-based access for community issue resolution.",
       tags: ["React", "TypeScript", "Python", "SQL", "REST API"],
       githubUrl: "https://github.com/jasminjasmin-droid/civicpulse",
-      demoUrl: "https://civicpulse.demo",
       highlight: "Civic Workflows",
     },
     {
@@ -159,7 +158,6 @@ export const PORTFOLIO_DATA = {
         "An intuitive conversational AI chatbot built with Python, Streamlit, and Google Gemini API, delivering responsive and context-aware conversational assistance for user queries.",
       tags: ["Python", "Streamlit", "Google Gemini API", "Generative AI", "LLMs"],
       githubUrl: "https://github.com/jasminjasmin-droid/minizo-chatbot",
-      demoUrl: "https://minizo-chatbot.streamlit.app",
       highlight: "Google Gemini API • Streamlit",
     },
     {
