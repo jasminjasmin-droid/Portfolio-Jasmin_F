@@ -21,11 +21,11 @@ export const Projects: React.FC = () => {
             <div className="w-12 h-1 bg-[#D95D39] rounded-full mt-4" />
           </div>
           <p className="text-sm text-[#5F5A53] max-w-sm">
-            Curated systems and applications built while exploring full-stack engineering, AI safety, and community tools.
+            Curated systems and applications built across full-stack engineering, generative AI, IoT hardware, and community platforms.
           </p>
         </div>
 
-        {/* Clean Project Cards - No images required */}
+        {/* Clean Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {projects.map((project: Project, index: number) => (
             <article
@@ -33,9 +33,9 @@ export const Projects: React.FC = () => {
               className="group bg-white border border-[#E8E2D8] rounded-2xl p-7 sm:p-8 flex flex-col justify-between hover:border-[#D95D39]/60 hover:shadow-sm transition-all duration-300 hover:-translate-y-1"
             >
               <div>
-                {/* Card Top: Numbering + Highlight Pill */}
+                {/* Card Top: Numbering + Highlight Pill + Status Pill */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs font-mono font-semibold text-[#8A8378]">
                       0{index + 1}
                     </span>
@@ -43,6 +43,12 @@ export const Projects: React.FC = () => {
                     <span className="text-xs font-medium text-[#D95D39] bg-[#FAF0EC] px-2.5 py-0.5 rounded-full">
                       {project.highlight}
                     </span>
+                    {project.status && (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-amber-800 bg-amber-50 border border-amber-200/80 px-2 py-0.5 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                        {project.status}
+                      </span>
+                    )}
                   </div>
                   <FolderGit2 className="w-4 h-4 text-[#8A8378] group-hover:text-[#D95D39] transition-colors" />
                 </div>
@@ -76,8 +82,8 @@ export const Projects: React.FC = () => {
                   ))}
                 </div>
 
-                {/* GitHub & Demo Action Buttons */}
-                <div className="flex items-center gap-3">
+                {/* GitHub & Action Buttons */}
+                <div className="flex items-center gap-3 flex-wrap">
                   <a
                     href={project.githubUrl}
                     target="_blank"
@@ -88,7 +94,7 @@ export const Projects: React.FC = () => {
                     <span>Source Code</span>
                   </a>
 
-                  {project.demoUrl && (
+                  {project.demoUrl ? (
                     <a
                       href={project.demoUrl}
                       target="_blank"
@@ -98,6 +104,14 @@ export const Projects: React.FC = () => {
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Live Preview</span>
                     </a>
+                  ) : project.status ? (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold text-[#8A8378] bg-[#FAF8F5] border border-[#E8E2D8] rounded-lg">
+                      In Development
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold text-[#8A8378] bg-[#FAF8F5] border border-[#E8E2D8] rounded-lg">
+                      Hardware Design
+                    </span>
                   )}
                 </div>
               </div>

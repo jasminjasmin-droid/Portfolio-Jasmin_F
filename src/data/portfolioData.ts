@@ -7,6 +7,7 @@ export interface Project {
   githubUrl: string;
   demoUrl?: string;
   highlight?: string;
+  status?: string;
 }
 
 export interface SkillCategory {
@@ -80,7 +81,7 @@ export const PORTFOLIO_DATA = {
     attributes: [
       {
         title: "Hands-on Builder",
-        desc: "Architecting software like SkillMesh, CivicPulse, and JackBot with clean code and modern frameworks.",
+        desc: "Architecting software like SkillMesh, CivicPulse, and Minizo-Chatbot with clean code and modern frameworks.",
       },
       {
         title: "AI & Tech Explorer",
@@ -151,22 +152,43 @@ export const PORTFOLIO_DATA = {
       highlight: "Civic Workflows",
     },
     {
-      id: "jackbot",
-      title: "JackBot",
-      tagline: "AI Chatbot & Intelligent Assistant",
+      id: "minizo-chatbot",
+      title: "Minizo-Chatbot",
+      tagline: "AI Chatbot",
       description:
-        "Built an AI-powered conversational chatbot application using a locally hosted LLM (Ollama), focusing on user interaction, context-aware query resolution, and practical AI solutions.",
-      tags: ["Python", "Generative AI", "Ollama", "Local LLMs", "React", "TypeScript"],
-      githubUrl: "https://github.com/jasminjasmin-droid/jackbot",
-      demoUrl: "https://jackbot.demo",
-      highlight: "Conversational AI & Local LLM",
+        "An intuitive conversational AI chatbot built with Python, Streamlit, and Google Gemini API, delivering responsive and context-aware conversational assistance for user queries.",
+      tags: ["Python", "Streamlit", "Google Gemini API", "Generative AI", "LLMs"],
+      githubUrl: "https://github.com/jasminjasmin-droid/minizo-chatbot",
+      demoUrl: "https://minizo-chatbot.streamlit.app",
+      highlight: "Google Gemini API • Streamlit",
+    },
+    {
+      id: "smart-parking",
+      title: "Smart Vehicle Parking System",
+      tagline: "Smart Parking / Vehicle Management Solution (Hardware)",
+      description:
+        "A practical hardware and sensor-driven vehicle management solution engineered for automated parking slot detection, real-time space monitoring, and streamlined parking flow.",
+      tags: ["Hardware", "IoT", "Sensors", "Embedded Systems", "Automation"],
+      githubUrl: "https://github.com/jasminjasmin-droid/smart-vehicle-parking",
+      highlight: "Hardware & IoT",
+    },
+    {
+      id: "nexora",
+      title: "Nexora",
+      tagline: "Skill Development & Collaboration Project Concept",
+      description:
+        "A forward-looking skill development and project collaboration platform concept designed to empower students and developer communities to learn by building together.",
+      tags: ["React", "TypeScript", "Skill Development", "Collaboration", "Concept"],
+      githubUrl: "https://github.com/jasminjasmin-droid/nexora",
+      highlight: "Concept Roadmap",
+      status: "In Progress",
     },
   ] as Project[],
 
   skills: [
     {
       category: "Technical Skills",
-      items: ["Python", "C Programming", "SQL", "Generative AI & LLMs", "Git & GitHub", "React", "TypeScript", "FastAPI", "PostgreSQL", "HTML", "CSS", "Flutter", "Ollama"],
+      items: ["Python", "C Programming", "SQL", "Generative AI & LLMs", "Google Gemini API", "Streamlit", "Git & GitHub", "React", "TypeScript", "FastAPI", "PostgreSQL", "HTML", "CSS", "Flutter", "Ollama"],
     },
     {
       category: "Professional & Interpersonal",
@@ -179,6 +201,8 @@ export const PORTFOLIO_DATA = {
     "C Programming",
     "SQL",
     "Generative AI & LLMs",
+    "Google Gemini API",
+    "Streamlit",
     "Git & GitHub",
     "React",
     "TypeScript",
